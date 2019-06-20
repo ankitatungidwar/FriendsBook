@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>FriendBook</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></link> 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel ="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link> 
+        <title>Create Post</title>
+    
+           
+   <style>
+       #nav-bar
+       {
+           position: sticky;
+           top:0;
+           z-index: 10;
+            font-size: 30px;
+       }
+       .navbar
+       {
+          background-color: blue;
+           padding: 20px !important;
+        font-size: 15px;
+        font: bold;
+        color:#fff !important;
+            
+       }
+       .navbar li
+       {
+           padding:0 10px;
+       }
+       .navbar-brand li a
+       {
+           color: #030303 !important;
+           font-weight:600;
+           
+       }
+       .navbar-brand
+       {
+           font-weight: bolder;
+           font-family: "Jokerman",serif;
+           color:#fff !important;
+           font-size: 30px;     
+       }
+       .navbar-toggler
+       {
+         outline: none !important;   
+       }
+       #banner
+       {
+           background-image: linear-gradient(to right,#98f5ff);
+           color: #030303;
+           padding-top: 5%;
+       }
+       .heading
+       {
+           font-size: 40px;
+           font-weight: 60;
+           margin-top: 50px;
+           font-weight: bolder;
+           font-family: "Forte",serif;
+       }
+       .img-fluid
+       {
+           width: 100%;
+           margin: 0;
+           background-attachment: fixed;
+           height: 100%;
+       }
+       .nav-link
+       {
+           font-weight: bolder;
+           font-family: "Jokerman",serif;
+           font-size: 20px;
+           color:#fff !important;
+       }
+       .nav-item
+       {
+           position: right;
+       }
+       .l1
+       {
+           color: #fff !important;
+           font-size: 15px;
+           font-weight: bolder;
+       }
+       .notification {
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+.notification .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
+      
+   </style>
+    </h:head>
+        <h:body>
+            <h:form>
+<section id="nav-bar">
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand">friendbook </a>
+        
+   
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      
+       <h:form class="l1">
+
+                          
+       
+       <h:link class="l1" outcome="Checknotif.xhtml">Notifications <span class="badge">#{login.theLoginAccount.show()}</span></h:link>&nbsp;
+       <h:link class="l1"  outcome="#{login.theLoginAccount.seeFriends()}">Friends</h:link>&nbsp;
+       <h:link class="l1"  outcome="updateProfile.xhtml">Update Profiles</h:link>&nbsp;
+       <h:link class="l1" outcome="Sendfrndrequest.xhtml">Send Friend Request</h:link>&nbsp;
+       <h:link class="l1"  outcome="SendMsg.xhtml">Send Message</h:link>&nbsp;
+       <h:link class="l1" outcome="#{login.theLoginAccount.showHashtags()}">Hashtags</h:link>&nbsp;
+       <h:commandButton class="fa fa-sign-out"  id="signout" value="Logout"
+                     action="index.xhtml"/>
+          
+
+
+            </h:form>
+      
+      
+    </ul>
+  </div>
+</nav>
+</section>
+<section id="banner" >
+    <div class="container">
+        <div class="row" >
+           <div class="col-md-6 col-lg-4">
+ <h:form>         
+     <inputText name="enter" value="#{login.theLoginAccount.PContent}"></inputText><br /><br />
+        
+<h:button value="Post" outcome="#{login.theLoginAccount.createPost()}"/>
+        
+</h:form>
+ </div>
+           <div class="col-md-4 col-lg-8 text-center">
+                <img src="post.gif" class="img-fluid"></img>
+            </div>
+        </div>
+    </div>
+    
+</section>
+            </h:form>      
+    </h:body>
+</html>
+
